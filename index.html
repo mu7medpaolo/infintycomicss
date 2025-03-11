@@ -19,25 +19,6 @@
             height: auto;
             border-radius: 10px;
         }
-        .comic .lock-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10px;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            display: none;
-        }
-        .comic.locked .lock-overlay {
-            display: flex;
-        }
     </style>
 </head>
 <body>
@@ -50,25 +31,13 @@
         <nav class="nav-links">
             <ul>
                 <li><a href="index.html" class="Home1">Home</a></li>
-                <li><a href="sub.html" class="sub">Subscription</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="new-this-week">
-        <h2>NEWS</h2>
-        <div class="news-carousel">
-            <div><img src="imags comics/captain-america-sot-1-feat.jpeg" alt="News 1"></div>
-            <div><img src="imags comics/wom2024001_invisiblewoman.jpg" alt="News 2"></div>
-            <div><img src="imags comics/REDHULK2025001_Cover-2000x1125.jpg" alt="News 3"></div>
-            <div><img src="imags comics/daredevil__born_again_soundtrack_cover__custom__v4_by_joancarrington14_diyz320-fullview.jpg" alt="News 4"></div>
-        </div>
-    </div>
-
     <section class="comics-section">
         <h2>Featured Comics</h2>
         <div class="comics-container" id="featuredComicsContainer"></div>
-        <button class="unlock-btn" id="unlockBtn">Unlock Now</button>
     </section>
 
     <section class="comics-section">
@@ -96,24 +65,23 @@
             ];
             
             const moreComics = [
-                { img: "imags comics/doctor.jpg", title: "Doctor Strange of Asgard (2025) #1", file: "comics/doctor.cbz" },
-                { img: "imags comics/webbllod.jpg", title: "WEB OF SPIDER-VERSE: NEW BLOOD (2025) #1", file: "comics/Web of Spider-Verse - New Blood 001 (2025) (Digital) (dekabro-Empire).cbz" },
-                { img: "imags comics/doom.jpg", title: "One World Under Doom (2025) #1", file: "comics/oneworlddoom.cbz" }
+                { img: "imags comics/doctor.jpg", title: "Doctor Strange of Asgard (2025) #1", file: "https://www.mediafire.com/file/7q8b9efv6mlm2xd/doctor.cbz/file" },
+                { img: "imags comics/webbllod.jpg", title: "WEB OF SPIDER-VERSE: NEW BLOOD (2025) #1", file: "https://www.mediafire.com/file/dshtw93uznt9f1r/Web_of_Spider-Verse_-_New_Blood_001_%25282025%2529_%2528Digital%2529_%2528dekabro-Empire%2529.cbz/file" },
+                { img: "imags comics/doom.jpg", title: "One World Under Doom (2025) #1", file: "https://www.mediafire.com/file/rfvszrb3cz76e75/oneworlddoom.cbz/file" },
+                { img: "imags comics/marvelholiday.jpg", title: "MARVEL HOLIDAY TALES TO ASTONISH (2024) #1", file: "https://www.mediafire.com/file/trllb5ok7oxp0af/Marvel_Holiday_Tales_To_Astonish_001_%25282025%2529_%2528Digital%2529_%2528Shan-Empire%2529.cbz/file" },
+                { img: "imags comics/moonknight12.jpg", title: "Moon Knight – Fist of Khonshu (2024) #0", file: "https://www.mediafire.com/file/wdaycqdewwjkk6r/Moon_Knight_-_Fist_Of_Khonshu_000_%25282024%2529_%2528Digital%2529_%2528Shan-Empire%2529.cbz/file" },
+                { img: "imags comics/deadpool2.jpg", title: "DEADPOOL/WOLVERINE: WEAPON X-TRACTION (2029) #1", file: "https://www.mediafire.com/file/9se2iwydgo95wdc/Deadpool-Wolverine_-_Weapon_X-Traction_001_%25282025%2529_%2528Digital%2529_%2528Kileko-Empire%2529.cbz/file" }
             ];
             
-            function renderComics(comics, containerId, isDownloadable = false, isLocked = false) {
+            function renderComics(comics, containerId, isDownloadable = false) {
                 const container = document.getElementById(containerId);
                 comics.forEach(comic => {
                     const comicDiv = document.createElement("div");
                     comicDiv.classList.add("comic");
-                    if (isLocked) {
-                        comicDiv.classList.add("locked");
-                    }
                     comicDiv.innerHTML = `
                         <a href="${isDownloadable ? comic.file : comic.link}" ${isDownloadable ? 'download' : ''}>
                             <img src="${comic.img}" alt="${comic.title}">
                         </a>
-                        <div class="lock-overlay">🔒</div>
                         <div class="comic-buttons">
                             <a href="${isDownloadable ? comic.file : comic.link}" ${isDownloadable ? 'download' : ''} class="button">
                                 ${isDownloadable ? 'Download ' : ''}${comic.title}
@@ -124,19 +92,8 @@
                 });
             }
 
-            const isSubscribed = false; // Change this to true if the user is subscribed
-
-            if (isSubscribed) {
-                document.getElementById("unlockBtn").style.display = "none";
-                renderComics(featuredComics, "featuredComicsContainer", false, false);
-            } else {
-                document.getElementById("unlockBtn").addEventListener("click", function() {
-                    window.location.href = "sub.html";
-                });
-                renderComics(featuredComics, "featuredComicsContainer", false, true);
-            }
-
-            renderComics(moreComics, "moreComicsContainer", true, false);
+            renderComics(featuredComics, "featuredComicsContainer", false);
+            renderComics(moreComics, "moreComicsContainer", true);
         });
     </script>
 
@@ -147,11 +104,11 @@
             </div>
             <div class="footer-links">
                 <ul>
-                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#"></a></li>
                 </ul>
             </div>
             <div class="footer-social">
-                <h3>FOLLOW US</h3>
+                <h3></h3>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/profile.php?id=61573608733528" class="face"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>

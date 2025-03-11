@@ -175,6 +175,9 @@ footer {
 
 .footer-logo img {
     width: 80px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .footer-links ul {
