@@ -45,58 +45,15 @@
         <div class="comics-container" id="moreComicsContainer"></div>
     </section>
 
+    <section class="comics-section">
+        <h2>Classics Comics</h2>
+        <div class="comics-container" id="classicsComicsContainer"></div>
+    </section>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('.news-carousel').slick({
-                autoplay: true,
-                autoplaySpeed: 10000,
-                dots: true,
-                arrows: false
-            });
-        });
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const featuredComics = [
-                { img: "imags comics/swcapa2025001_dc11.jpeg", title: "Sam Wilson, Captain America (2025)", link: "sam.html" },
-                { img: "imags comics/clean.jpg", title: "Daredevil Facsimile Edition (2025)", link: "dare.html" },
-                { img: "imags comics/clean (1).jpg", title: "Red Hulk (2025)", link: "red.html" }
-            ];
-            
-            const moreComics = [
-                { img: "imags comics/doctor.jpg", title: "Doctor Strange of Asgard (2025) #1", file: "https://www.mediafire.com/file/7q8b9efv6mlm2xd/doctor.cbz/file" },
-                { img: "imags comics/webbllod.jpg", title: "WEB OF SPIDER-VERSE: NEW BLOOD (2025) #1", file: "https://www.mediafire.com/file/dshtw93uznt9f1r/Web_of_Spider-Verse_-_New_Blood_001_%25282025%2529_%2528Digital%2529_%2528dekabro-Empire%2529.cbz/file" },
-                { img: "imags comics/doom.jpg", title: "One World Under Doom (2025) #1", file: "https://www.mediafire.com/file/rfvszrb3cz76e75/oneworlddoom.cbz/file" },
-                { img: "imags comics/marvelholiday.jpg", title: "MARVEL HOLIDAY TALES TO ASTONISH (2024) #1", file: "https://www.mediafire.com/file/trllb5ok7oxp0af/Marvel_Holiday_Tales_To_Astonish_001_%25282025%2529_%2528Digital%2529_%2528Shan-Empire%2529.cbz/file" },
-                { img: "imags comics/moonknight12.jpg", title: "Moon Knight – Fist of Khonshu (2024) #0", file: "https://www.mediafire.com/file/wdaycqdewwjkk6r/Moon_Knight_-_Fist_Of_Khonshu_000_%25282024%2529_%2528Digital%2529_%2528Shan-Empire%2529.cbz/file" },
-                { img: "imags comics/deadpool2.jpg", title: "DEADPOOL/WOLVERINE: WEAPON X-TRACTION (2029) #1", file: "https://www.mediafire.com/file/9se2iwydgo95wdc/Deadpool-Wolverine_-_Weapon_X-Traction_001_%25282025%2529_%2528Digital%2529_%2528Kileko-Empire%2529.cbz/file" }
-            ];
-            
-            function renderComics(comics, containerId, isDownloadable = false) {
-                const container = document.getElementById(containerId);
-                comics.forEach(comic => {
-                    const comicDiv = document.createElement("div");
-                    comicDiv.classList.add("comic");
-                    comicDiv.innerHTML = `
-                        <a href="${isDownloadable ? comic.file : comic.link}" ${isDownloadable ? 'download' : ''}>
-                            <img src="${comic.img}" alt="${comic.title}">
-                        </a>
-                        <div class="comic-buttons">
-                            <a href="${isDownloadable ? comic.file : comic.link}" ${isDownloadable ? 'download' : ''} class="button">
-                                ${isDownloadable ? 'Download ' : ''}${comic.title}
-                            </a>
-                        </div>
-                    `;
-                    container.appendChild(comicDiv);
-                });
-            }
-
-            renderComics(featuredComics, "featuredComicsContainer", false);
-            renderComics(moreComics, "moreComicsContainer", true);
-        });
-    </script>
-
+    <script src="scripts.js"></script> 
+    
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
@@ -104,11 +61,11 @@
             </div>
             <div class="footer-links">
                 <ul>
-                    <li><a href="#"></a></li>
+                    <li><a href="#">ABOUT</a></li>
                 </ul>
             </div>
             <div class="footer-social">
-                <h3></h3>
+                <h3>FOLLOW US</h3>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/profile.php?id=61573608733528" class="face"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
