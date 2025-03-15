@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const featuredComics = [
         { img: "imags comics/swcapa2025001_dc11.jpeg", title: "Sam Wilson, Captain America (2025)", link: "sam.html" },
         { img: "imags comics/clean.jpg", title: "Daredevil Facsimile Edition (2025)", link: "dare.html" },
-        { img: "imags comics/RED HULK.jpg", title: "Red Hulk (2025)", link: "red.html" }
+        { img: "imags comics/Iron Man (2024).jpg", title: "Iron Man (2024)", link: "red.html" }
     ];
     
     const moreComics = [
@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", function() {
         { img: "imags comics/DOCTOR DOOM & ROCKET RACCOON.jpg", title: "DOCTOR DOOM & ROCKET RACCOON (2025) #1", file: "https://www.mediafire.com/file/vs5713dhroxfza3/Doctor_Doom_%2526_Rocket_Raccoon_001_%25282025%2529_%2528Digital%2529_%2528Shan-Empire%2529.cbz/file" },
         { img: "imags comics/bloodhunt.jpg", title: "Blood Hunt (2024) #1", file: "https://www.mediafire.com/file/o7ax4cft7g5o8a5/Blood_Hunt_-_Red_Band_001_%25282024%2529_%25284_covers%2529_%2528Digital%252Bscan%2529_%2528dekabro-Empire%2529.cbz/file" },
         { img: "imags comics/Aliens Vs. Avengers.jpg", title: "Aliens Vs. Avengers (2024) #1", file: "https://www.mediafire.com/file/3y5nqfz8yvgae0i/Aliens_vs._Avengers_001_%25282024%2529_%2528Digital%2529_%2528Shan-Empire%2529.cbz/file" },
+        { img: "imags comics/clean.jpg", title: "Daredevil Facsimile Edition (2025)#1", file: "https://www.mediafire.com/file/5plk8pkx6pumng1/Daredevil_No._1_Facsimile_Edition_001_%25282025%2529_%2528c2c%2529_%2528digital%2529_%2528Marika-Empire%2529.pdf/file" },
+        { img: "imags comics/RED HULK.jpg", title: "RED HULK #1", file: "https://www.mediafire.com/file/afjtzprp7fxwgfg/Red_Hulk_001_%25282025%2529_%2528Digital%2529_%2528Shan-Empire%2529.cbz/file" },
+        { img: "imags comics/swcapa2025001_dc11.jpeg", title: "Sam Wilson, Captain America (2025)#1", file: "https://www.mediafire.com/file/2x7c0dx7irrvu34/Sam_Wilson_-_Captain_America_001_%25282025%2529_%2528Digital%2529_%2528Shan-Empire%2529.cbz/file" },
         { img: "imags comics/marvalzomb.jpg", title: "Marvel Zombies: Dawn of Decay (2024) #1", file: "https://www.mediafire.com/file/l10zfryoglmxsbd/Marvel_Zombies_-_Dawn_Of_Decay_001_%25282024%2529_%2528Digital%2529_%2528Shan-Empire%2529.cbz/file" },
         { img: "imags comics/deadpool2.jpg", title: "DEADPOOL/WOLVERINE: WEAPON X-TRACTION (2029) #1", file: "https://www.mediafire.com/file/9se2iwydgo95wdc/Deadpool-Wolverine_-_Weapon_X-Traction_001_%25282025%2529_%2528Digital%2529_%2528Kileko-Empire%2529.cbz/file" }
     ];
