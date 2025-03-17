@@ -1,0 +1,199 @@
+/* Reset بسيط */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #202020;
+    padding: 15px 20px;
+}
+
+.logo img {
+    width: 120px;
+}
+
+.nav-links ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links ul li a:hover {
+    color: #ff3333;
+}
+
+/* ===== Sections General Style ===== */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== About Section ===== */
+.about-section {
+    background-color: #ffffff;
+}
+
+.about-section h1 {
+    font-size: 40px;
+    color: #202020;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    color: #555;
+}
+
+/* ===== Why Choose Us Section ===== */
+.why-choose-us {
+    background-color: #fafafa;
+}
+
+.why-choose-us h2 {
+    font-size: 32px;
+    color: #202020;
+    margin-bottom: 20px;
+}
+
+.why-choose-us ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.why-choose-us ul li {
+    font-size: 18px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    color: #444;
+}
+
+/* ===== Our Vision Section ===== */
+.our-vision {
+    background-color: #ffffff;
+}
+
+.our-vision h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.our-vision p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+}
+
+/* ===== Call to Action Section ===== */
+.cta-section {
+    background-color: #202020;
+    color: #fff;
+    padding: 80px 20px;
+}
+
+.cta-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cta-section .btn {
+    background-color: #ff3333;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.cta-section .btn:hover {
+    background-color: #e60000;
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 100px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+    color: #ff3333;
+}
+
+.footer-social .social-icons a {
+    color: #fff;
+    margin-right: 15px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.footer-social .social-icons a:hover {
+    color: #ff3333;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
