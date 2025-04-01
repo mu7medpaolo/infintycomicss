@@ -9,8 +9,8 @@ $(document).ready(function(){
 
 document.addEventListener("DOMContentLoaded", function() {
     const featuredComics = [
-        { img: "imags comics/swcapa2025001_dc11.jpeg", title: "Sam Wilson, Captain America (2025)", link: "sam.html" },
-        { img: "imags comics/clean.jpg", title: "Daredevil Facsimile Edition (2025)", link: "dare.html" },
+        { img: "imags comics/Doom's Division.jpg", title: "Doom's Division (2025) #1", link: "sam.html" },
+        { img: "imags comics/POOLUMINATI.jpg", title: "POOLUMINATI (2025) #1", link: "dare.html" },
         { img: "imags comics/Iron Man (2024).jpg", title: "Iron Man (2024)", link: "red.html" }
     ];
     
@@ -28,7 +28,12 @@ document.addEventListener("DOMContentLoaded", function() {
         { img: "imags comics/clean.jpg", title: "Daredevil Facsimile Edition (2025)#1", file: "https://www.mediafire.com/file/5plk8pkx6pumng1/Daredevil_No._1_Facsimile_Edition_001_%25282025%2529_%2528c2c%2529_%2528digital%2529_%2528Marika-Empire%2529.pdf/file" },
         { img: "imags comics/RED HULK.jpg", title: "RED HULK #1", file: "https://www.mediafire.com/file/afjtzprp7fxwgfg/Red_Hulk_001_%25282025%2529_%2528Digital%2529_%2528Shan-Empire%2529.cbz/file" },
         { img: "imags comics/swcapa2025001_dc11.jpeg", title: "Sam Wilson, Captain America (2025)#1", file: "https://www.mediafire.com/file/2x7c0dx7irrvu34/Sam_Wilson_-_Captain_America_001_%25282025%2529_%2528Digital%2529_%2528Shan-Empire%2529.cbz/file" },
+        { img: "imags comics/Doom's Division.jpg", title: "Doom's Division (2025) #1", file: "https://www.mediafire.com/file/7v21no5q2h8lteu/Doom%2527s_Division_001_%25282025%2529_%2528Digital%2529_%2528Shan-Empire%2529.cbz/file" },
         { img: "imags comics/marvalzomb.jpg", title: "Marvel Zombies: Dawn of Decay (2024) #1", file: "https://www.mediafire.com/file/l10zfryoglmxsbd/Marvel_Zombies_-_Dawn_Of_Decay_001_%25282024%2529_%2528Digital%2529_%2528Shan-Empire%2529.cbz/file" },
+        { img: "imags comics/Empyre Avengers.jpg", title: "Empyre Avengers (2020)", file: "https://www.mediafire.com/file/o03hrkrqgl6og5d/Empyre_000_-_Avengers_%25282020%2529_%2528Digital%2529_%2528Zone-Empire%2529.cbr/file" },
+        { img: "imags comics/X-MANHUNT OMEGA.jpg", title: "X-MANHUNT OMEGA (2025) #1", file: "https://www.mediafire.com/file/jxovm9r4f3bjn74/X-Manhunt_Omega_001_%25282025%2529_%2528digital%2529_%2528Marika-Empire%2529.cbz/file" },
+        { img: "imags comics/POOLUMINATI.jpg", title: "POOLUMINATI (2025) #1", file: "https://www.mediafire.com/file/1f96vcxw4m1xo27/Pooluminati_001_%25282025%2529_%2528Digital%2529_%2528Kileko-Empire%2529.cbz/file" },
+        { img: "imags comics/Laura Kinney Wolverine.jpg", title: "Laura Kinney: Wolverine (2024) #1", file: "https://www.mediafire.com/file/06vjhkgi7lueruy/Laura_Kinney_-_Wolverine_001_%25282025%2529_%2528digital%2529_%2528Marika-Empire%2529.cbz/file" },
         { img: "imags comics/deadpool2.jpg", title: "DEADPOOL/WOLVERINE: WEAPON X-TRACTION (2029) #1", file: "https://www.mediafire.com/file/9se2iwydgo95wdc/Deadpool-Wolverine_-_Weapon_X-Traction_001_%25282025%2529_%2528Digital%2529_%2528Kileko-Empire%2529.cbz/file" }
     ];
 
@@ -38,7 +43,9 @@ document.addEventListener("DOMContentLoaded", function() {
         { img: "imags comics/xmen1963.jpg", title: "Uncanny X-Men (1963) #1", link: "https://www.mediafire.com/file/18nlfdegda2s00z/xmen1963%25231.pdf/file" },
         { img: "imags comics/the spider1963.jpg", title: "The Amazing Spider-Man (1963) #1", link: "https://www.mediafire.com/file/fri1adimlgv41gy/the_Amazing_Spider-Man_%25231.pdf/file" } 
     ];
-    
+    const ironmancomics = [
+      { img: "imags comics/Iron Man (2024).jpg", title: "Iron Man (2024)#1", file: "https://www.mediafire.com/file/6kw9b68zu6u2c4y/Iron_Man_001_%25282024%2529_%2528Digital%2529_%2528Shan-Empire%2529.cbz/file" },
+    ];
     function renderComics(comics, containerId, isDownloadable = false) {
         const container = document.getElementById(containerId);
         comics.forEach(comic => {
@@ -60,5 +67,62 @@ document.addEventListener("DOMContentLoaded", function() {
 
     renderComics(featuredComics, "featuredComicsContainer", false);
     renderComics(moreComics, "moreComicsContainer", true);
-    renderComics(classicsComics, "classicsComicsContainer", false); // إضافة الكومكس الكلاسيكية
+    renderComics(classicsComics, "classicsComicsContainer", false); 
+});
+document.addEventListener("DOMContentLoaded", function() {
+
+    const toggleButton = document.getElementById("toggleCharacters");
+    const charactersBar = document.getElementById("charactersBar");
+
+    toggleButton.addEventListener("click", function() {
+        if (charactersBar.style.display === "block") {
+            charactersBar.style.display = "none";
+        } else {
+            charactersBar.style.display = "block";
+        }
+    });
+
+    
+    document.addEventListener("click", function(event) {
+        if (!charactersBar.contains(event.target) && event.target !== toggleButton) {
+            charactersBar.style.display = "none";
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+
+  const ironmanComics = [
+      {
+          img: "imags comics/Iron Man (2024).jpg",
+          title: "Iron Man (2024) #1",
+          file: "https://www.mediafire.com/file/6kw9b68zu6u2c4y/Iron_Man_001_%25282024%2529_%2528Digital%2529_%2528Shan-Empire%2529.cbz/file"
+      },
+      {
+          img: "imags comics/ironman2.jpg",
+          title: "Iron Man #2",
+          file: "#"
+      }
+  ];
+
+
+  function renderComics(comics, containerId) {
+      const container = document.getElementById(containerId);
+      comics.forEach(comic => {
+          const comicDiv = document.createElement("div");
+          comicDiv.classList.add("comic");
+
+          comicDiv.innerHTML = `
+              <a href="${comic.file}" download>
+                  <img src="${comic.img}" alt="${comic.title}">
+              </a>
+              <div class="comic-buttons">
+                  <a href="${comic.file}" download class="button">Download ${comic.title}</a>
+              </div>
+          `;
+
+          container.appendChild(comicDiv);
+      });
+  }
+
+  renderComics(ironmanComics, "ironmancomicsContainer");
 });
