@@ -1,81 +1,167 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta name="description" content="Read the best and latest comics including Marvel, DC, and independent creators. Download and enjoy high-quality comics for free!">
-<meta name="keywords" content="Comics, Marvel Comics, DC Comics, Download Comics, Free Comics, Infinity Comics, Online Comics">
-<meta name="author" content="Infinity Comics - Mohamed Hassan">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Language" content="en">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://yourdomain.com/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POOLUMINATI (2025) #1</title>
-    <link rel="icon" type="image/png" href="imags comics/favicon-16x16.png">  
+    <title>Deadpool/Wolverine (2025)</title>
+    <meta name="description" content="Read the best and latest comics including Marvel, DC, and independent creators">
+    <meta name="keywords" content="Comics, Marvel Comics, DC Comics, Download Comics">
+    <meta name="author" content="Infinity Comics - Mohamed Hassan">
+    <link rel="icon" type="image/png" href="imags comics/favicon-16x16.png">
     <link rel="stylesheet" href="styledare.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-
     <header>
+        <div class="header-container">
             <div class="logo">
                 <a href="index.html">
-            <img src="imags comics/Marvel_Logo.svg.png" alt="Marvel Logo">
-        </div>
-        <nav class="nav-links">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
+                    <img src="imags comics/Marvel_Logo.svg.png" alt="Marvel Logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search comics...">
+                <button id="searchButton"><i class="fas fa-search"></i></button>
+              
+            </div>
 
-            </ul>
-        </nav>
+            <button id="dark-mode-toggle">Dark Mode🌙</button>
+        </div>
     </header>
 
     <main class="comic-container">
         <div class="comic-image">
-            <img src="imags comics/POOLUMINATI.jpg" alt="Daredevil #1">
+            <img src="imags comics/Deadpool Wolverine.jpg" alt="Doom's Division (2025)">
         </div>
         <div class="comic-details">
-            <h1>POOLUMINATI (2025) #1</h1>
-            <p class="Published"><strong>Published:</strong> March 26, 2025</p>
-            <p class="WRITER"><strong>WRITER:</strong> Zac GormanAlexis Quasarano</p>
-            <p class="Penciller"><strong>Penciller:</strong> Enid BalamTodd Nauck</p>
-            <p class="bio">   </p>
-
+            <h1>Deadpool/Wolverine (2025) #1</h1>
+            <p class="Published"><strong>Published:</strong> January 01, 2025</p>
+            <p class="WRITER"><strong>WRITER:</strong> Benjamin Percy</p>
+            <p class="Penciller"><strong>Penciller:</strong> Joshua Cassara</p>
+            <p class="bio">WADE AND LOGAN - TOGETHER AGAIN! The most unlikely team-up turned most demanded one, DEADPOOL and WOLVERINE are BACK! Together again and ready to blow your minds in this ongoing series that hits like a never-ending action movie - with the fate of the world in the balance! When a fan-favorite VILLAIN is unearthed, you'll get to see a new side of our heroes and their adversary, as an ages-long plan comes to fruition. And the only thing that stands between the Earth and annihilation is the Best There Is and the Merc With The Mouth. Brought to you by another legendary pairing - writer Benjamin Percy (WOLVERINE, HELLVERINE) and artist Joshua Cassara (X-FORCE, X-MEN) - these comic superstars put your favorite super heroes through their paces in a series chock-full of surprises, twist reveals and a villainous plot that'll turn long-term and newly arriving X-readers' heads. This is one for the pull list!</p>
             <div class="buttons">
-                </div>
-                
-                
-                
-                <a href="https://www.mediafire.com/file/1f96vcxw4m1xo27/Pooluminati_001_%25282025%2529_%2528Digital%2529_%2528Kileko-Empire%2529.cbz/file" download class="btn download">Download </a>
+                <a href="https://www.mediafire.com/file/7v21no5q2h8lteu/Doom%2527s_Division_001_%25282025%2529_%2528Digital%2529_%2528Shan-Empire%2529.cbz/file" download class="btn download">Download</a>
             </div>
         </div>
     </main>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let comics = [
-                { img: "images/comics/sw.jpg", title: "Sam Wilson, Captain America (2025)", link: "sam.html" },
-                { img: "images/comics/dd.jpg", title: "Daredevil Facsimile Edition (2025)", link: "dare.html" },
-                { img: "images/comics/red-hulk.jpg", title: "Red Hulk (2025)", link: "red.html" }
-            ];
+<script>
+  // Dark Mode Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
     
-            let container = document.querySelector(".comics-container");
+    // Check for saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+        darkModeToggle.textContent = 'Light Mode☀️';
+    }
     
-            comics.forEach(comic => {
-                let comicDiv = document.createElement("div");
-                comicDiv.classList.add("comic");
+    // Toggle dark mode
+    darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        const isDarkMode = body.classList.contains('dark-mode');
+        
+        darkModeToggle.textContent = isDarkMode ? 'Light Mode☀️' : 'Dark Mode🌙';
+        localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+    });
     
-                comicDiv.innerHTML = `
-                    <a href="${comic.link}">
-                        <img src="${comic.img}" alt="${comic.title}">
-                    </a>
-                    <div class="comic-buttons">
-                        <a href="${comic.link}" class="button">${comic.title}</a>
-                    </div>
-                `;
+    // Search Functionality
+    const searchButton = document.getElementById('searchButton');
+    searchButton.addEventListener('click', function() {
+        const searchTerm = document.getElementById('searchInput').value.trim();
+        if (searchTerm) {
+            alert(`Searching for: ${searchTerm}`);
+            // Here you would implement actual search functionality
+            // window.location.href = `search.html?q=${encodeURIComponent(searchTerm)}`;
+        }
+    });
     
-                container.appendChild(comicDiv);
-            });
+    // Search on Enter key
+    document.getElementById('searchInput').addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            searchButton.click();
+        }
+    });
+});
+// بيانات الكوميكس (يجب أن تكون متاحة لجميع الصفحات)
+const allComics = [
+    { 
+        title: "Doom's Division (2025) #1", 
+        img: "imags comics/Doom's Division.jpg",
+        link: "sam.html"
+    },
+    { 
+        title: "Iron Man (2024) #1", 
+        img: "imags comics/Iron Man (2024).jpg",
+        link: "red.html"
+    },
+    // أضف باقي الكوميكس هنا بنفس الهيكل
+];
+
+// وظيفة البحث
+function performSearch(searchTerm) {
+    const searchResults = document.getElementById('searchResults');
+    searchResults.innerHTML = '';
+    
+    if (searchTerm.trim() === '') {
+        searchResults.style.display = 'none';
+        return;
+    }
+    
+    const filteredComics = allComics.filter(comic => 
+        comic.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    
+    if (filteredComics.length > 0) {
+        searchResults.style.display = 'block';
+        filteredComics.forEach(comic => {
+            const resultItem = document.createElement('div');
+            resultItem.className = 'search-result-item';
+            resultItem.innerHTML = `
+                <a href="${comic.link}">
+                    <img src="${comic.img}" alt="${comic.title}">
+                    <p>${comic.title}</p>
+                </a>
+            `;
+            searchResults.appendChild(resultItem);
         });
-    </script>
+    } else {
+        searchResults.style.display = 'block';
+        searchResults.innerHTML = '<p class="no-results">No comics found</p>';
+    }
+}
+
+// تهيئة البحث عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
+    
+    // البحث عند الضغط على الزر
+    searchButton.addEventListener('click', function() {
+        performSearch(searchInput.value);
+    });
+    
+    // البحث عند الضغط على Enter
+    searchInput.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            performSearch(searchInput.value);
+        }
+    });
+    
+    // إخفاء نتائج البحث عند النقر خارجها
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.search-bar')) {
+            document.getElementById('searchResults').style.display = 'none';
+        }
+    });
+});
+</script>
     
 </body>
 </html>

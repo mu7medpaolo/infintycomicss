@@ -1,49 +1,93 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta name="description" content="Read the best and latest comics including Marvel, DC, and independent creators. Download and enjoy high-quality comics for free!">
-<meta name="keywords" content="Comics, Marvel Comics, DC Comics, Download Comics, Free Comics, Infinity Comics, Online Comics">
-<meta name="author" content="Infinity Comics - Mohamed Hassan">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Language" content="en">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://yourdomain.com/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iron Man (2024)  </title>
+    <title>Daredevil: Cold Day in Hell (2025)</title>
+    <meta name="description" content="Read the best and latest comics including Marvel, DC, and independent creators">
+    <meta name="keywords" content="Comics, Marvel Comics, DC Comics, Download Comics">
+    <meta name="author" content="Infinity Comics - Mohamed Hassan">
+    <link rel="icon" type="image/png" href="imags comics/favicon-16x16.png">
     <link rel="stylesheet" href="styledare.css">
-    <link rel="icon" type="image/png" href="imags comics/favicon-16x16.png">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-
     <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="imags comics/Marvel_Logo.svg.png" alt="Marvel Logo">
-            </a>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imags comics/Marvel_Logo.svg.png" alt="Marvel Logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search comics...">
+                <button id="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+            <button id="dark-mode-toggle">Dark Mode🌙</button>
         </div>
-        <nav class="nav-links">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main class="comic-container">
         <div class="comic-image">
-            <img src="imags comics/Iron Man (2024).jpg" alt="Iron Man (2024) ">
+            <img src="imags comics/Daredevil Cold Day in Hell.jpg" alt="Doom's Division (2025)">
         </div>
         <div class="comic-details">
-            <h1>Iron Man (2024) #1 </h1>
-            <p class="Published"><strong>Published:</strong> October 23, 2024</p>
-            <p class="WRITER"><strong>WRITER:</strong> Spencer Ackerman</p>
-            <p class="Penciller"><strong>Penciller:</strong> </p>
-            <p class="bio">A NEW, BRUTAL ERA BEGINS! Roxxon and AIM team up to take on Stark Unlimited! But they're ready for the old Tony Stark. This one? He's a lot angrier than he used to be. Iron Man is going to war! New armor, old enemies, and unbelievable twists abound in this fresh take on a fury-powered Iron Man from Pulitzer Prize-winning journalist Spencer Ackerman and groundbreaking artist Julius Ohta!</p>
+            <h1>Daredevil: Cold Day in Hell (2025) #1</h1>
+            <p class="Published"><strong>Published:</strong> April 02, 2025</p>
+            <p class="WRITER"><strong>WRITER:</strong> Steve McnivenCharles Soule</p>
+            <p class="Penciller"><strong>Penciller:</strong> Steve Mcniven</p>
+            <p class="bio"> HELL GONE COLD! After a horrific series of events, the world is in shambles. Matt Murdock is old, and his powers have faded to nothing. Matt will not, however, sit by and watch his fellow New Yorkers suffer, so instead of swinging around the city from his billy club line, he slings soup at a food center for the poor. But when a mysterious wrinkly old man interrupts a secret convoy causing an explosion, a deadly gas fills Hell's Kitchen and this tale takes a turn that will change how you look at the Man Without Fear.  </p>
             <div class="buttons">
-                <a href="https://www.mediafire.com/file/6kw9b68zu6u2c4y/Iron_Man_001_%25282024%2529_%2528Digital%2529_%2528Shan-Empire%2529.cbz/file" download class="btn download">Download</a>
+                <a href="https://www.mediafire.com/file/pziwjfgqxpmvwm6/Daredevil_-_Cold_Day_In_Hell_001_%25282025%2529_%2528Digital%2529_%2528Shan-Empire%2529.cbz/file" download class="btn download">Download</a>
             </div>
         </div>
     </main>
 
+    <script>
+      // Dark Mode Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+    
+    // Check for saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+        darkModeToggle.textContent = 'Light Mode☀️';
+    }
+    
+    // Toggle dark mode
+    darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        const isDarkMode = body.classList.contains('dark-mode');
+        
+        darkModeToggle.textContent = isDarkMode ? 'Light Mode☀️' : 'Dark Mode🌙';
+        localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+    });
+    
+    // Search Functionality
+    const searchButton = document.getElementById('searchButton');
+    searchButton.addEventListener('click', function() {
+        const searchTerm = document.getElementById('searchInput').value.trim();
+        if (searchTerm) {
+            alert(`Searching for: ${searchTerm}`);
+            // Here you would implement actual search functionality
+            // window.location.href = `search.html?q=${encodeURIComponent(searchTerm)}`;
+        }
+    });
+    
+    // Search on Enter key
+    document.getElementById('searchInput').addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            searchButton.click();
+        }
+    });
+});
+    </script>
 </body>
 </html>

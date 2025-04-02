@@ -2,8 +2,8 @@
 const comicsData = {
   featured: [
       { img: "imags comics/Doom's Division.jpg", title: "Doom's Division (2025) ", link: "sam.html" },
-      { img: "imags comics/POOLUMINATI.jpg", title: "POOLUMINATI (2025) ", link: "dare.html" },
-      { img: "imags comics/Iron Man (2024).jpg", title: "Iron Man (2024)", link: "red.html" }
+      { img: "imags comics/Deadpool Wolverine.jpg", title: "Deadpool/Wolverine (2025) ", link: "dare.html" },
+      { img: "imags comics/Daredevil Cold Day in Hell.jpg", title:"Daredevil: Cold Day in Hell (2025)", link: "red.html" }
   ],
   more: [
       { img: "imags comics/doctor.jpg", title: "Doctor Strange of Asgard (2025) #1", file: "https://www.mediafire.com/file/7q8b9efv6mlm2xd/doctor.cbz/file" },
@@ -153,3 +153,4 @@ function setupSearch() {
       }
   });
 }
+
