@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Comics</title>
     <meta name="description" content="Read the best and latest comics, including Marvel, DC, and independent creators. Download and enjoy high-quality comics for free!">
     <meta name="keywords" content="comics, Marvel comics, DC comics, download comics, free comics, infinity comics, online comics">
     <meta name="author" content="Infinity Comics - Mohamed Hassan">
     <link rel="canonical" href="https://yourdomain.com/">
     <link rel="icon" type="image/png" href="imags comics/favicon-16x16.png">   
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infinity Comics</title>
-    <meta name="description" content="Sam Wilson, Captain America (2025)">
-    <meta name="description" content="The Avengers (2025)">
-    <meta name="description" content="Iron Man (2024)">
-    <meta name="description" content="Daredevil Facsimile Edition (2025)">
-    <meta name="description" content="Red Hulk (2025)">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -32,23 +28,35 @@
                     <li><a href="about.html">ABOUT</a></li>
                 </ul>
             </nav>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search comics...">
+                <button id="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+            <button id="dark-mode-toggle">Dark Mode🌙</button>
         </div>
     </header>
     
-    <section class="comics-section">
-        <h2>Featured Comics</h2>
-        <div class="comics-container" id="featuredComicsContainer"></div>
-    </section>
+    <main>
+        <section class="comics-section">
+            <h2>Featured Comics</h2>
+            <div class="comics-container" id="featuredComicsContainer"></div>
+        </section>
 
-    <section class="comics-section">
-        <h2>More Comics</h2>
-        <div class="comics-container" id="moreComicsContainer"></div>
-    </section>
+        <section class="comics-section">
+            <h2>More Comics</h2>
+            <div class="comics-container" id="moreComicsContainer"></div>
+        </section>
 
-    <section class="comics-section">
-        <h2>Classic Comics</h2>
-        <div class="comics-container" id="classicsComicsContainer"></div>
-    </section>
+        <section class="comics-section">
+            <h2>Classic Comics</h2>
+            <div class="comics-container" id="classicsComicsContainer"></div>
+        </section>
+
+        <section class="comics-section" id="searchResultsSection" style="display:none;">
+            <h2>Search Results</h2>
+            <div class="comics-container" id="searchResultsContainer"></div>
+        </section>
+    </main>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
@@ -61,11 +69,12 @@
             </div>
             <div class="footer-links">
                 <ul>
-                    <li><a href="#"></a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">License Agreement</a></li>
                 </ul>
             </div>
             <div class="footer-social">
-                <h3></h3>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/profile.php?id=61573608733528" class="face"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -76,11 +85,6 @@
         </div>
         <div class="footer-bottom">
             <p>© 2025 Infinity Comics. All rights reserved.</p>
-            <ul>
-                <li><a href="#">Terms of Use</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">License Agreement</a></li>
-            </ul>
         </div>
     </footer>
 </body>

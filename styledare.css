@@ -6,6 +6,10 @@ body {
     margin: 0;
     padding: 0;
 }
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
 
 /* تنسيق الهيدر */
 header {
@@ -229,4 +233,50 @@ footer {
         flex-direction: column;
         text-align: center;
     }
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar input {
+  padding: 10px 15px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: #ff3333;
+}
+
+.search-bar button {
+  background-color: #ff3333;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #e60000;
+}
+/* Dark Mode Toggle */
+#dark-mode-toggle {
+  background-color: #202020;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#dark-mode-toggle:hover {
+  background-color: #333;
 }
