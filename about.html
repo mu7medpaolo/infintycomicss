@@ -5,30 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Infinity Comics</title>
     <link rel="stylesheet" href="styleabout.css">
-    <link rel="icon" type="image/png" href="imags comics/favicon-16x16.png">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="imags comics/favicon-16x16.png">
 </head>
 <body>
-
-  
     <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="imags comics/Marvel_Logo.svg.png" alt="Infinity Comics Logo">
-            </a>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imags comics/Marvel_Logo.svg.png" alt="Infinity Comics Logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search comics...">
+                <button id="searchButton"><i class="fas fa-search"></i></button>
+                <div class="search-results" id="searchResults"></div>
+            </div>
+            <button id="dark-mode-toggle">Dark Mode🌙</button>
         </div>
-        <nav class="nav-links">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-            </ul>
-        </nav>
     </header>
 
-    
     <section class="about-section">
         <div class="container">
             <h1>About Infinity Comics</h1>
             <p>
-                Welcome to Infinity Comics! We’re your ultimate destination for reading and exploring the world of comics online. Whether you’re into Marvel heroes,or independent creators, you’ll find something exciting here.
+                Welcome to Infinity Comics! We're your ultimate destination for reading and exploring the world of comics online. Whether you're into Marvel heroes or independent creators, you'll find something exciting here.
             </p>
             <p>
                 Our platform is dedicated to bringing you high-quality comics, classic series, and the latest releases, all in one place. We aim to create a community where comic fans from around the world can come together, explore new stories, and revisit old favorites.
@@ -36,7 +43,6 @@
         </div>
     </section>
 
-  
     <section class="why-choose-us">
         <div class="container">
             <h2>Why Infinity Comics?</h2>
@@ -50,17 +56,15 @@
         </div>
     </section>
 
-    
     <section class="our-vision">
         <div class="container">
             <h2>Our Vision</h2>
             <p>
-                Infinity Comics was created by fans, for fans. Our mission is to make comic books more accessible to everyone, everywhere. We believe in the power of storytelling and the magic of illustrations, and we’re here to deliver that experience straight to your screen.
+                Infinity Comics was created by fans, for fans. Our mission is to make comic books more accessible to everyone, everywhere. We believe in the power of storytelling and the magic of illustrations, and we're here to deliver that experience straight to your screen.
             </p>
         </div>
     </section>
 
-    
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
@@ -75,7 +79,7 @@
             </div>
             <div class="footer-social">
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61573608733528"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-youtube"></i></a>
@@ -86,6 +90,94 @@
             <p>© 2025 Infinity Comics. All Rights Reserved.</p>
         </div>
     </footer>
-
+    <script>
+      // وظيفة البحث
+      function performSearch(searchTerm) {
+          const searchResults = document.getElementById('searchResults');
+          searchResults.innerHTML = '';
+          
+          if (searchTerm.trim() === '') {
+              searchResults.style.display = 'none';
+              return;
+          }
+          
+          // جمع كل الكوميكس من جميع الأقسام
+          const featuredComics = document.querySelectorAll('#featured-comics .comic-item');
+          const moreComics = document.querySelectorAll('#more-comics .comic-item');
+          const classicComics = document.querySelectorAll('#classic-comics .comic-item');
+          
+          const allComics = [...featuredComics, ...moreComics, ...classicComics];
+          let foundResults = false;
+          
+          allComics.forEach(comic => {
+              const title = comic.querySelector('h3').textContent.toLowerCase();
+              if (title.includes(searchTerm.toLowerCase())) {
+                  foundResults = true;
+                  const resultItem = document.createElement('div');
+                  resultItem.className = 'search-result-item';
+                  
+                  const imgSrc = comic.querySelector('img').src;
+                  const link = comic.querySelector('a').href;
+                  
+                  resultItem.innerHTML = `
+                      <a href="${link}">
+                          <img src="${imgSrc}" alt="${title}">
+                          <p>${title}</p>
+                      </a>
+                  `;
+                  searchResults.appendChild(resultItem);
+              }
+          });
+          
+          if (foundResults) {
+              searchResults.style.display = 'block';
+          } else {
+              searchResults.style.display = 'block';
+              searchResults.innerHTML = '<p class="no-results">No comics found</p>';
+          }
+      }
+      
+      // تهيئة البحث عند تحميل الصفحة
+      document.addEventListener('DOMContentLoaded', function() {
+          const searchInput = document.getElementById('searchInput');
+          const searchButton = document.getElementById('searchButton');
+          const darkModeToggle = document.getElementById('dark-mode-toggle');
+          const body = document.body;
+          
+          // البحث عند الضغط على الزر
+          searchButton.addEventListener('click', function() {
+              performSearch(searchInput.value);
+          });
+          
+          // البحث عند الضغط على Enter
+          searchInput.addEventListener('keyup', function(event) {
+              if (event.key === 'Enter') {
+                  performSearch(this.value.trim());
+              }
+          });
+          
+          // إخفاء نتائج البحث عند النقر خارجها
+          document.addEventListener('click', function(event) {
+              if (!event.target.closest('.search-bar')) {
+                  document.getElementById('searchResults').style.display = 'none';
+              }
+          });
+          
+          // Dark Mode Functionality
+          if (localStorage.getItem('darkMode') === 'enabled') {
+              body.classList.add('dark-mode');
+              darkModeToggle.textContent = 'Light Mode☀️';
+          }
+          
+          darkModeToggle.addEventListener('click', () => {
+              body.classList.toggle('dark-mode');
+              const isDarkMode = body.classList.contains('dark-mode');
+              darkModeToggle.textContent = isDarkMode ? 'Light Mode☀️' : 'Dark Mode🌙';
+              localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+          });
+      });
+      </script>
+    
+  
 </body>
 </html>
